@@ -6,6 +6,7 @@ typedef struct {
 } ht_item;
 
 typedef struct {
+  int base_size;
   int size;
   int count;
   ht_item** items; // Double pointers because we want an Array to item pointers
