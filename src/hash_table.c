@@ -276,7 +276,8 @@ int main() {
   ht_insert(ht, key_to_update, "new value2");
   print_ht_hash_table(ht);
 
-  // test resizing
+  // test resizing up
+  printf("Adding keys 1 .. 100\n");
   for (int i = 0; i < 100; i++) {
     char key[10];
     char value[30];
@@ -285,6 +286,15 @@ int main() {
     ht_insert(ht, key, value);
   }
 
+  print_ht_hash_table(ht);
+
+  // test resizing down
+  printf("Deleting keys 1 .. 100\n");
+  for (int i = 0; i < 100; i++) {
+    char key[10];
+    sprintf(key, "key %d", i);
+    ht_delete(ht, key);
+  }
   print_ht_hash_table(ht);
 
   return 0;
